@@ -16,7 +16,10 @@ Get the recipe and use it.
 https://darianau.github.io/project-1/ 
 
 # API Links
-Wine info API https://www.wine-searcher.com/datafeed
-Food Recipes and Wine API https://spoonacular.com/food-api/docs#Get-Dish-Pairing-for-Wine
+- Wine info API https://www.wine-searcher.com/datafeed
+- Food Recipes and Wine API https://spoonacular.com/food-api/docs#Get-Dish-Pairing-for-Wine
+- Google Search API https://developers.google.com/custom-search/docs/element 
+
+
 
 
