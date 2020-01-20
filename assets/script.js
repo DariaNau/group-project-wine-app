@@ -40,5 +40,7 @@ var wineKEY = "4e2cbd32ae6b47f3acb6348b6fb258f6";
           foodINFO.append(li);
         };
         $("#userInput").val("");
+        
       });
     });
+    };

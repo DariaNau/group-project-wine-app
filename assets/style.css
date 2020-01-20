@@ -1,5 +1,5 @@
 
-Menu Styles
+/* Menu Styles */
 .home-menu {
     padding: 0.5em;
     text-align: right;
@@ -43,7 +43,7 @@ h3 {
     color: #fff;
 }
 
-.container {
+body {
     background-color: olive;
 }
 
