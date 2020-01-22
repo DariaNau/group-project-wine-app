@@ -73,10 +73,3 @@ $("#recipeDiv").on("click", ".searches", function () {
         
     });
   });
-
-
-
-
-
-});
-};
