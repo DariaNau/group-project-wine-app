@@ -47,6 +47,10 @@
     height: auto;
 }
 
+#layout {
+    padding: 0;
+}
+
 .sidebar {
     background: maroon;
     color: #fff;
@@ -56,10 +60,28 @@ body {
     background-color: olive;
 }
 
+.content-subhead {
+    padding-top: 2em;
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.content {
+    margin-top: 2em;
+    padding-top: 2em;
+    padding: 2em 1em 0;
+}
+
 
 @media (min-width: 48em) {
     .content {
         padding: 2em 3em 0;
+        margin-left: 20%;
     }
 
     /* .header {
@@ -92,3 +114,5 @@ body {
         }    
 
 }
+
+
