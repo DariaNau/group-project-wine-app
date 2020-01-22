@@ -1,0 +1,20 @@
+{
+    "drinks": [
+      {
+        "strDrink": "Pinot Noir"
+      },
+  
+      {
+        "strDrink": "Malbec"
+      },
+  
+      {
+        "strDrink": "Merlot"
+      },
+  
+      {
+        "strDrink": "Cabernet Sauvignon"
+      }
+    ]
+  }
+  
