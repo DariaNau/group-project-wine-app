@@ -22,6 +22,13 @@ $("#searchBtn").click(function () {
 });
 
 
+
+
+
+// MOST POPULAR SEARCHES - WORK IN PROGRESS
+
+
+
 // const suggestedSearch = ['Albarino', 'Beaujolais','Cabernet Sauvignon', 'Cava', 'Champagne', 'Chardonnay', 'Chenin Blanc', 'Grenache', 'Malbec', 'Merlot', 'Pinot Grigio', 'Pinot Noir', 'Sauvignon Blanc', 'Zinfandel'];
 
 // $("#userInput").keydown(function(){
@@ -41,6 +48,10 @@ $("#searchBtn").click(function () {
 //     $("#suggestedSearch").html("")
 //     $('#userInput').val(searchItem)
 // })
+
+
+
+
 
 
 
@@ -70,7 +81,7 @@ function wineDataLoad() {
     var response2Local = JSON.parse(localStorage.getItem('response2'))
     for (var i = 0; i < response2Local.length; i++) {
       foodOPT = $("<a><button></button></a>").text("Food pairing option " + [i + 1] + ": " + response2Local[i]).addClass("pure-button searches").attr("data-name", response2Local[i]);
-      foodOPT.attr("href", "recipe.html");
+      // foodOPT.attr("href", "recipe.html");
       foodINFO.append(foodOPT);
     };
 
@@ -97,7 +108,7 @@ function renderButtons() {
   var response2Local = JSON.parse(localStorage.getItem('response2'));
   for (var i = 0; i < response2Local.length; i++) {
     foodOPT = $("<a><button></button></a>").text("Food pairing option " + [i + 1] + ": " + response2Local[i]).addClass("pure-button searches").attr("data-name", response2Local[i]);
-    foodOPT.attr("href", "recipe.html");
+    // foodOPT.attr("href", "recipe.html");
     foodINFO.append(foodOPT);
   };
 }
@@ -119,12 +130,14 @@ $("#recipeDiv").on("click", ".searches", function () {
 });
 
 function getRecipeId(foodITEM) {
-  var recipeURL = "https://api.spoonacular.com/recipes/autocomplete?number=1&query=" + foodITEM + "&apiKey=" + wineKEY;
+  var recipeURL = "https://api.spoonacular.com/recipes/search?query=" + foodITEM + "&number=1" + "&apiKey=" + wineKEY;
   $.ajax({
     url: recipeURL,
     method: "GET"
   }).then(function (RecipeRes) {
-    var recipeID = RecipeRes[0].id;
+    console.log(RecipeRes)
+    var recipeID = RecipeRes.results[0].id;
+    console.log(recipeID)
     getRecipeInfo(recipeID);
   });
 }
@@ -145,6 +158,8 @@ function getRecipeInfo(recipeID) {
 
 function loadRecipe(dataArr) {
 
+  var newDiv = $("recipe-result");
+
   // 1 - DISH TITLE
 
   var title = dataArr.title;
@@ -159,14 +174,11 @@ function loadRecipe(dataArr) {
   // 3 - INGRIDIENTS
 
   var ingList = dataArr.extendedIngredients;
-  console.log(ingList)
-
-
   for (var i = 0; i < ingList.length; i++) {
-    ingred = $("<li></li>").text(ingList[i].originalString);
-    console.log(ingred);
-    var ingrDiv = $("#ingridientsDiv").style.color = "blue";
-    ingrDiv.append(ingred);
+    ingredLI = $("<li></li>").text(ingList[i].originalString);
+    console.log(ingList[i].originalString);
+    var ingrDiv = $("#ingridientsDiv");
+    ingrDiv.append(ingredLI);
   }
 
 
@@ -174,17 +186,32 @@ function loadRecipe(dataArr) {
   // 4 - INSTRUCTIONS
 
 
+var instructList = dataArr.analyzedInstructions;
 
+console.log(instructList)
+
+for (var i = 0; i < instructList.length; i++) {
+
+  console.log(instructList[i].steps);
+  var steps = instructList[i].steps;
+
+  console.log(steps)
+
+  for (var i = 0; i < steps.length; i++) {
+
+    console.log(steps[i].step)
+  // instructLI = $("<li></li>").text(steps[i]);
+  // var instructDiv = $("#instructDiv");
+  // instructDiv.append(instructLI)
+  // newDiv.append(instructDiv);
+
+  }
+
+}
 
   // 5 - ALLERGY INFO
-
-
-
 
   // 6 - OTHER WINE SUGGESTIONS (SIDE BAR) ++++ WINE IMAGE??
 
 };
 
-
-
-// how to link recipe.html to each button? <a> tag??
