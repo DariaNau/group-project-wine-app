@@ -1,6 +1,6 @@
 var foodINFO = $("#recipeDiv");
 var foodOPT;
-var wineKEY = "a8eab2c977d84c6ab3accce519ed8c4a";
+var wineKEY = "50e942eafbb0432890384d40751871de";
 
 // if enter is pressed by user trigger the on(click) function
 
@@ -14,12 +14,35 @@ $("#userInput").keyup(function (event) {
 // ClICK ON SEARCH TO START 
 
 $("#searchBtn").click(function () {
-  var term = $("#userInput").val().trim()
-  if(!suggestedSearch.includes(term)){
-    suggestedSearch.push(term)
-  }
+  // var term = $("#userInput").val().trim()
+  // if(!suggestedSearch.includes(term)){
+  //   suggestedSearch.push(term)
+  // }
   wineDataLoad();
 });
+
+
+// const suggestedSearch = ['Albarino', 'Beaujolais','Cabernet Sauvignon', 'Cava', 'Champagne', 'Chardonnay', 'Chenin Blanc', 'Grenache', 'Malbec', 'Merlot', 'Pinot Grigio', 'Pinot Noir', 'Sauvignon Blanc', 'Zinfandel'];
+
+// $("#userInput").keydown(function(){
+//     var val = $(this).val()
+//     $("#suggestedSearch").html("")
+    
+//     for(var i = 0; i < suggestedSearch.length; i++){
+//         if(suggestedSearch[i].includes(val)){
+//             var item = $("<div>").text(suggestedSearch[i]).addClass('selectSearch')
+//             $("#suggestedSearch").append(item)
+//         }
+//     }
+// })
+
+// $(document).on("click", ".selectSearch", function(){
+//     var searchItem = $(this).text()
+//     $("#suggestedSearch").html("")
+//     $('#userInput').val(searchItem)
+// })
+
+
 
 function wineDataLoad() {
 

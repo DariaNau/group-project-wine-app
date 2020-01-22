@@ -1,24 +1,3 @@
-const suggestedSearch = ['malbec', 'merlot', 'pinot grigio'];
-
-$("#userInput").keydown(function(){
-    var val = $(this).val()
-    $("#suggestedSearch").html("")
-    
-    for(var i = 0; i < suggestedSearch.length; i++){
-        if(suggestedSearch[i].includes(val)){
-            var item = $("<div>").text(suggestedSearch[i]).addClass('selectSearch')
-            $("#suggestedSearch").append(item)
-        }
-    }
-})
-
-$(document).on("click", ".selectSearch", function(){
-    var searchItem = $(this).text()
-    $("#suggestedSearch").html("")
-    $('#userInput').val(searchItem)
-})
-
-
 //   $.get(
 //     "wine-data.json"
 //   ).then(res => {
