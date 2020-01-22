@@ -53,7 +53,12 @@ function wineDataLoad() {
     // handling bad requests here
 
   }).catch(function (err) {
-    alert("Please enter a full name of the grape (e.x. Cabernet Sauvignon)");
+    Swal.fire({
+      title: 'Oops!',
+      text: 'Please enter a valid name of grape varietal.',
+      icon: 'error',
+      confirmButtonText: 'Got it'
+    })
   });
 };
 
@@ -82,13 +87,8 @@ function wineDataLoad() {
 
 // SECOND AJAX CALL - RECIPIES
 
-// this on click event is for the list of suggested food pairings
-
 $("#recipeDiv").on("click", ".searches", function () {
-
   var foodITEM = $(this).attr("data-name");
-  console.log(foodITEM);
-
   getRecipeId(foodITEM)
 });
 
@@ -103,9 +103,7 @@ function getRecipeId(foodITEM) {
         console.log(recipeInfo)
         getRecipeInfo(recipeInfo)
       });
-
     }
-
 
 function getRecipeInfo(recipeInfo) {
   var recipeInfoURL = "https://api.spoonacular.com/recipes/" + recipeInfo + "/information?includeNutrition=false" + "&apiKey=" + wineKEY;
@@ -116,7 +114,6 @@ function getRecipeInfo(recipeInfo) {
     console.log(RecipeInfoRes)
   });
 }
-
 
 function loadRecipe () {
 
