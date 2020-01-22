@@ -9,8 +9,6 @@ $("#searchBtn").click(function () {
 
 
 // FUNCTION TO LOAD DATA FROM FOOD AND WINE API
-<<<<<<< HEAD
-=======
     
     function wineDataLoad(){
       
@@ -24,7 +22,6 @@ $("#searchBtn").click(function () {
         console.log(wineRes)
       var userInput = $("#userInput").val().trim();
       var wineURL = "https://api.spoonacular.com/food/wine/dishes?wine=" + userInput + "&apiKey=" + wineKEY;
->>>>>>> 769bb721f9277cabbff107df3239d98e474a98f8
 
 function wineDataLoad() {
 
@@ -67,9 +64,6 @@ function wineDataLoad() {
     alert("Please enter the full name of the grape");
   });
 
-<<<<<<< HEAD
-};
-=======
         foodINFO.empty();
         for (var i = 0; i < response2.length; i++){
           foodOPT = $("<button></button>").text("Food pairing option "+ [i+1] + ": " + response2[i]).addClass("searches").attr("data-name", response2[i]);
@@ -81,7 +75,6 @@ function wineDataLoad() {
       });
     });
     };
->>>>>>> 769bb721f9277cabbff107df3239d98e474a98f8
 
 // SECOND AJAX CALL - RECIPIES
 
@@ -132,16 +125,3 @@ function getRecipeId(foodITEM) {
 
 
 
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-});
-};
->>>>>>> 769bb721f9277cabbff107df3239d98e474a98f8
