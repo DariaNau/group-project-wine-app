@@ -1,4 +1,4 @@
-# Wine & DIne - A Simple Food Pairing App
+# Wine & Dine - A Simple Food Pairing App
 
 ## Introduction
 
