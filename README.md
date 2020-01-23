@@ -37,9 +37,9 @@ Get the recipe and use it.
 # Sources
 
 - Food Recipes and Wine API https://spoonacular.com/food-api/docs#Get-Dish-Pairing-for-Wine  
-- Image API
 - Pure Css
 - Warning modals CDN https://sweetalert.js.org/
+- Pixabay API https://pixabay.com/api/docs/
 
 ## License
 
@@ -52,6 +52,24 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Simplified Pixabay License
+Our license empowers creators and protects our community. We want to keep it as simple as possible. Here is an overview of what Pixabay content can and can't be used for.
+
+What is allowed?
+✓	All content on Pixabay can be used for free for commercial and noncommercial use across print and digital, except in the cases mentioned in "What is not allowed".
+✓	Attribution is not required. Giving credit to the contributor or Pixabay is not necessary but is always appreciated by our community.
+✓	You can make modifications to content from Pixabay.
+What is not allowed?
+This section only applies to image users and not to the appropriate image authors.
+
+✕	Don't redistribute or sell someone else's Pixabay images or videos on other stock or wallpaper platforms.
+✕	Don't sell unaltered copies of an image. e.g. sell an exact copy of a stock photo as a poster, print or on a physical product.
+✕	Don't portray identifiable people in a bad light or in a way that is offensive.
+✕	Don't use images with identifiable brands to create a misleading association with a product or service.
+Learn more
+Model and Property Release
 
 
 
