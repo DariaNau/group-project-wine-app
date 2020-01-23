@@ -106,7 +106,7 @@ function wineDataLoad() {
 // ------------------------LOCAL STORAGE TO FINISH
 
 function renderButtons() {
-  var response2Local = JSON.parse(localStorage.getItem("response2"));
+  var response2Local = JSON.parse(localStorage.getItem("response2")) || [];
   for (var i = 0; i < response2Local.length; i++) {
     foodOPT = $("<a><button></button></a>")
       .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
