@@ -1,10 +1,6 @@
 const queryString = window.location.search;
-console.log(queryString);
-
 const urlParams = new URLSearchParams(queryString);
-
 var dishName = urlParams.get('dish-name')
-console.log(dishName);
 
 getRecipeId(dishName);
 
@@ -19,9 +15,7 @@ function getRecipeId(dishName) {
       url: recipeURL,
       method: "GET"
     }).then(function(RecipeRes) {
-      console.log(RecipeRes);
       var recipeID = RecipeRes.results[0].id;
-      console.log(recipeID);
       getRecipeInfo(recipeID);
     });
   };
@@ -44,24 +38,22 @@ function getRecipeId(dishName) {
   }
   
   function loadRecipe(dataArr) {
+
     var newDiv = $("#recipe-card");
   
     // 1 - DISH TITLE
   
     var title = dataArr.title;
-    console.log(title);
     var titleText = $("#dish-title");
     titleText.append(title);
-    // newDiv.append(titleText);
-    console.log(titleText);
+    newDiv.prepend(titleText);
   
     // 2 - DISH IMAGE
   
     var image = dataArr.image;
-    console.log(image);
     var imageTAG = $("#dish-image").attr("src", image);
-    newDiv.append(imageTAG);
-  
+    imageTAG.html(image);
+
     // 3 - INGRIDIENTS
   
     var ingList = dataArr.extendedIngredients;
@@ -83,14 +75,19 @@ function getRecipeId(dishName) {
       console.log(steps);
       for (var i = 0; i < steps.length; i++) {
         console.log(steps[i].step);
-        // instructLI = $("<li></li>").text(steps[i]);
-        // var instructDiv = $("#instructDiv");
-        // instructDiv.append(instructLI);
-        // newDiv.append(instructDiv);
+        instructOL = $("<li>").text(steps[i].step);
+        var instructDiv = $("#instructDiv");
+        instructDiv.append(instructOL);
+        newDiv.append(instructDiv);
       }
     }
   
     // 5 - ALLERGY INFO
+      
+    var diet = dataArr.diets;
+    dietText = $("#diets");
+    dietText.append(diet).addClass("pure-button");
+    newDiv.append(dietText);
   
     // 6 - OTHER WINE SUGGESTIONS (SIDE BAR) ++++ WINE IMAGE??
   }
