@@ -1,6 +1,6 @@
 var foodINFO = $("#recipeDiv");
 var foodOPT;
-var wineKEY = "50e942eafbb0432890384d40751871de";
+var wineKEY = "4e2cbd32ae6b47f3acb6348b6fb258f6";
 
 // if enter is pressed by user trigger the on(click) function
 
@@ -80,7 +80,9 @@ function wineDataLoad() {
           .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
           .addClass("pure-button searches")
           .attr("data-name", response2Local[i]);
-        foodOPT.attr("href", "recipe.html");
+
+          var dish = (response2Local[i]);
+          foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
         foodINFO.append(foodOPT);
       }
 
@@ -110,7 +112,9 @@ function renderButtons() {
       .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
       .addClass("pure-button searches")
       .attr("data-name", response2Local[i]);
-    // foodOPT.attr("href", "recipe.html");
+
+      var dish = (response2Local[i]);
+    foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
     foodINFO.append(foodOPT);
   }
 }
@@ -125,96 +129,14 @@ init();
 
 // 2ND AJAX CALL - FOR RECIPIES!
 
-$("#recipeDiv").on("click", ".searches", function() {
-  var foodITEM = $(this).attr("data-name");
-  getRecipeId(foodITEM);
-});
+// $("#recipeDiv").on("click", ".searches", function() {
+//   var foodITEM = $(this).attr("data-name");
+//   getRecipeId(foodITEM);
+ 
+// });
 
-function getRecipeId(foodITEM) {
-  var recipeURL =
-    "https://api.spoonacular.com/recipes/search?query=" +
-    foodITEM +
-    "&number=1" +
-    "&apiKey=" +
-    wineKEY;
-  $.ajax({
-    url: recipeURL,
-    method: "GET"
-  }).then(function(RecipeRes) {
-    console.log(RecipeRes);
-    var recipeID = RecipeRes.results[0].id;
-    console.log(recipeID);
-    getRecipeInfo(recipeID);
-  });
-}
 
-function getRecipeInfo(recipeID) {
-  var recipeInfoURL =
-    "https://api.spoonacular.com/recipes/" +
-    recipeID +
-    "/information?includeNutrition=false" +
-    "&apiKey=" +
-    wineKEY;
-  $.ajax({
-    url: recipeInfoURL,
-    method: "GET"
-  }).then(function(RecipeInfoRes) {
-    console.log(RecipeInfoRes);
-    var dataArr = RecipeInfoRes;
-    loadRecipe(dataArr);
-  });
-}
 
-// Load recipe.html page
 
-function loadRecipe(dataArr) {
-  var newDiv = $("#recipe-card");
 
-  // 1 - DISH TITLE
 
-  var title = dataArr.title;
-  console.log(title);
-  var titleText = $("#dish-title");
-  titleText.append(title);
-  // newDiv.append(titleText);
-  // console.log(titleText);
-
-  // 2 - DISH IMAGE
-
-  var image = dataArr.image;
-  console.log(image);
-  var imageTAG = $("#dish-image").attr("src", image);
-  newDiv.append(imageTAG);
-
-  // 3 - INGRIDIENTS
-
-  var ingList = dataArr.extendedIngredients;
-  for (var i = 0; i < ingList.length; i++) {
-    ingredLI = $("<li></li>").text(ingList[i].originalString);
-    console.log(ingList[i].originalString);
-    var ingrDiv = $("#ingridientsDiv");
-    ingrDiv.append(ingredLI);
-  }
-
-  // 4 - INSTRUCTIONS
-
-  var instructList = dataArr.analyzedInstructions;
-  console.log(instructList);
-
-  for (var i = 0; i < instructList.length; i++) {
-    console.log(instructList[i].steps);
-    var steps = instructList[i].steps;
-    console.log(steps);
-    for (var i = 0; i < steps.length; i++) {
-      console.log(steps[i].step);
-      // instructLI = $("<li></li>").text(steps[i]);
-      // var instructDiv = $("#instructDiv");
-      // instructDiv.append(instructLI);
-      // newDiv.append(instructDiv);
-    }
-  }
-
-  // 5 - ALLERGY INFO
-
-  // 6 - OTHER WINE SUGGESTIONS (SIDE BAR) ++++ WINE IMAGE??
-}
