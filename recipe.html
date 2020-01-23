@@ -22,6 +22,7 @@
       href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/loading.css" />
     <title>Recipe Page</title>
   </head>
 
@@ -44,15 +45,16 @@
         </div>
 
         <div class="content pure-u-1 pure-u-md-3-4">
-            <div class="content">
-                <h1 class="content-head is-center">Recipe Title goes here</h1>
+            <div id="recipe-card" class="content">
+                <h1 id="dish-title" class="content-head is-center"></h1>
 
                 
                 <div id="recipe-result">
                   <ul id="ingridientsDiv"></ul>
                 </div>
   
-            <img class="pure-img" src="" alt="Recipe image">
+     
+                <img id="dish-image" class="pure-img" src="" alt="Recipe image">
                 <div class="pure-g">
                     <div class="pure-u-md-1-2 pure-u-lg-1">
                         <h3 class="content-subhead">
@@ -98,6 +100,7 @@
     <script type="text/javascript" src="assets/js/config.js"></script>
     <script src="assets/js/algolia.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/google-script.js"></script>
+    <script defer src="assets/js/recipeLoad.js"></script>
+    <script defer src="assets/js/google-script.js"></script>
   </body>
 </html>
