@@ -85,6 +85,12 @@ html, body {
     text-transform: capitalize;
 }
 
+.winepic {
+    height: 200px;
+    width: 250px;
+    float: right;
+}
+
 .content-subhead {
     padding-top: 2em;
     text-transform: uppercase;
