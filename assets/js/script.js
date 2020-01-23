@@ -1,6 +1,6 @@
 var foodINFO = $("#recipeDiv");
 var foodOPT;
-var wineKEY = "4e2cbd32ae6b47f3acb6348b6fb258f6";
+var wineKEY = "a8eab2c977d84c6ab3accce519ed8c4a";
 
 // if enter is pressed by user trigger the on(click) function
 
@@ -65,7 +65,7 @@ function wineDataLoad() {
       var grapeName = $("<p></p>").text(userInput);
       wineINFO.html(grapeName);
       var p = $("<p></p>").text(
-        "Great choice! " + response1 + " Choose you recipe below!"
+      response1 + " Please select a style of food you're in the mood for to see the recipe!"
       );
       wineINFO.append(p);
       var response2 = wineRes.pairings;
@@ -126,14 +126,6 @@ function init() {
 init();
 
 // ------------------------LOCAL STORAGE TO FINISH
-
-// 2ND AJAX CALL - FOR RECIPIES!
-
-// $("#recipeDiv").on("click", ".searches", function() {
-//   var foodITEM = $(this).attr("data-name");
-//   getRecipeId(foodITEM);
- 
-// });
 
 
 
