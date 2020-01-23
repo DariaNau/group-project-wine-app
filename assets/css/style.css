@@ -95,6 +95,7 @@ html, body {
     margin-top: 2em;
     padding-top: 2em;
     padding: 2em 1em 0;
+    position: absolute;
 }
 
 .footer {
