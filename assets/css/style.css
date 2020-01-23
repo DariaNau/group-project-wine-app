@@ -1,4 +1,3 @@
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -43,8 +42,8 @@
 
 /* LAYOUT CSS */
 .pure-img-responsive {
-    max-width: 100%;
-    height: auto;
+    width: 280px;
+    height: 550px;
 }
 
 #layout {
@@ -54,10 +53,20 @@
 .sidebar {
     background: maroon;
     color: #fff;
+    margin-top: 2em;
 }
 
-body {
+html, body {
+    height: 100%;
+    margin: 0;
     background-color: olive;
+}
+
+.pure-button {
+    color: white;
+    border-radius: 4px;
+    background: maroon;
+    text-shadow: 0 1px 1px rgba(0,0,0, 0.2);
 }
 
 .content-subhead {
@@ -78,6 +87,9 @@ body {
 }
 
 .footer {
+    position: fixed;
+    bottom: 0;
+    background: none;
     padding: 1em 0;
 }
 .footer a {
