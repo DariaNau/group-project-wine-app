@@ -81,7 +81,7 @@ function wineDataLoad() {
     var response2Local = JSON.parse(localStorage.getItem('response2'))
     for (var i = 0; i < response2Local.length; i++) {
       foodOPT = $("<a><button></button></a>").text("Food pairing option " + [i + 1] + ": " + response2Local[i]).addClass("pure-button searches").attr("data-name", response2Local[i]);
-      // foodOPT.attr("href", "recipe.html");
+      foodOPT.attr("href", "recipe.html");
       foodINFO.append(foodOPT);
     };
 
@@ -108,7 +108,7 @@ function renderButtons() {
   var response2Local = JSON.parse(localStorage.getItem('response2'));
   for (var i = 0; i < response2Local.length; i++) {
     foodOPT = $("<a><button></button></a>").text("Food pairing option " + [i + 1] + ": " + response2Local[i]).addClass("pure-button searches").attr("data-name", response2Local[i]);
-    // foodOPT.attr("href", "recipe.html");
+    foodOPT.attr("href", "recipe.html");
     foodINFO.append(foodOPT);
   };
 }
