@@ -1,27 +1,77 @@
 const config = {
-    APPLICATION_ID: 'U4CQ51CWWF',
-    SEARCH_ONLY_API_KEY: 'ab00b914a80138bc9888ba615f0bf965',
-    ADMIN_KEY: 'ab879f50e3b79a3d028cce9301959e3b'
+    APPLICATION_ID: '50O0R53X9V',
+    SEARCH_ONLY_API_KEY: '6a43b8a3ff3ae7f3e0589a9218243b70',
+    ADMIN_KEY: '21a6ef7c8d09025afc4e5ef3d3685135'
   };
   const client = algoliasearch(config.APPLICATION_ID, config.ADMIN_KEY);
   const index = client.initIndex('PROJECT_1');
 
-  const drinks = [
-    {
-      strDrink: 'Pinot Noir'
-    },
-    {
-      strDrink: 'Malbec'
-    },   
-    {
-      strDrink: 'Merlot'
-    },
-    {
-      strDrink: 'Cabernet Sauvignon'
-    }
-  ];
+  const drinks = 
+      [
+      {
+        "strDrink": "Albarino"
+      },
+  
+      {
+        "strDrink": "Beaujolais"
+      },
+  
+      {
+        "strDrink": "Cabernet Sauvignon"
+      },
+  
+      {
+        "strDrink": "Cava"
+      },
 
-  index.addObjects(drinks);
+      {
+        "strDrink": "Champagne"
+      },
+  
+      {
+        "strDrink": "Chardonnay"
+      },
+  
+      {
+        "strDrink": "Chenin Blanc"
+      },
+  
+      {
+        "strDrink": "Grenache"
+      },
+      
+      {
+        "strDrink": "Malbec"
+      },
+  
+      {
+        "strDrink": "Merlot"
+      },
+  
+      {
+        "strDrink": "Pinot Grigio"
+      },
+  
+      {
+        "strDrink": "Pinot Noir"
+      },
+
+      {
+        "strDrink": "Sauvignon Blanc"
+      },
+  
+      {
+        "strDrink": "Zinfandel"
+      }
+    ]
+  
+
+  index.addObjects(drinks, (err, content) => {
+      if (err) {
+          console.log(err)
+      }
+      console.log(content)
+  });
   autocomplete('#userInput', { hint: true }, [
     {
       source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
