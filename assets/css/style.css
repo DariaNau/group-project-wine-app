@@ -88,6 +88,14 @@ html, body {
     color: white;
 }
 
+.winepic {
+    height: 200px;
+    width: 250px;
+    float: right;
+    opacity: 0;
+
+}
+
 .content-subhead {
     padding-top: 2em;
     text-transform: uppercase;
@@ -124,6 +132,9 @@ html, body {
     background: none;
 }
 
+#dish-image {
+    float: right;
+}
 
 @media (min-width: 48em) {
     .content {
