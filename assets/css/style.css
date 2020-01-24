@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Menu Styles */
+/* Menu Bar Styles */
 .home-menu {
     padding: 0.5em;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
@@ -19,7 +19,7 @@
 
 .home-menu .pure-menu-heading {
     color: white;
-    font-weight: 400;
+    font-weight: 450;
     font-size: 200%;
     text-align: left;
     font-family: 'Playfair Display';
@@ -40,12 +40,13 @@
     color: #AECFE5;
 }
 
-/* LAYOUT CSS */
+/* Page Layout*/
 .pure-img-responsive {
     width: 220px;
     height: 100%;
     margin-top: 2em;
     margin-left: 2em;
+    margin-right: 2em;
 }
 
 #layout {
@@ -66,7 +67,8 @@
 html, body {
     height: 100%;
     margin: 0;
-    background-color: olive;
+    background: url('../images/background.jpg');
+    font-family: 'Playfair Display';
 }
 
 .pure-button {
@@ -80,16 +82,17 @@ html, body {
     width: fit-content;
     display: block;
     margin: 50px 0;
-    border: 2px solid maroon;
-    background: none;
+    /* border: 2px solid maroon; */
+    background-color: maroon;
     text-transform: capitalize;
+    color: white;
 }
 
 .content-subhead {
     padding-top: 2em;
     text-transform: uppercase;
-    color: #aaa;
-    border-bottom: 1px solid #eee;
+    color: black;
+    border-bottom: 1px solid black;
     padding: 0.4em 0;
     font-size: 80%;
     font-weight: 500;
@@ -101,6 +104,7 @@ html, body {
     padding-top: 2em;
     padding: 2em 1em 0;
     position: relative;
+    font-family: 'Playfair Display';
 }
 
 .footer {
@@ -112,7 +116,7 @@ html, body {
     text-align: center;
 }
 .footer a {
-    color: #ccc;
+    color: black;
     font-size: 80%;
 }
 .footer .pure-menu a:hover,
