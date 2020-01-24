@@ -1,6 +1,10 @@
+$(window).on("load",function(){
+  $(".loader-wrapper").fadeOut("slow");
+});
+
 var foodINFO = $("#recipeDiv");
 var foodOPT;
-var wineKEY = "a8eab2c977d84c6ab3accce519ed8c4a";
+var wineKEY = "4e2cbd32ae6b47f3acb6348b6fb258f6";
 
 // if enter is pressed by user trigger the on(click) function
 

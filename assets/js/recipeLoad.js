@@ -1,3 +1,8 @@
+$(window).on("load", function(){
+  $(".loader-wrapper").fadeOut("slow");
+  
+});
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 var dishName = urlParams.get('dish-name')
@@ -83,6 +88,7 @@ function getRecipeId(dishName) {
     }
   
     // 5 - ALLERGY INFO
+
     var diet = dataArr.diets;
     for (var i = 0; i < diet.length; i++) {
     dietText = $("<button>").text(diet[i]).addClass("pure-button");
@@ -90,6 +96,4 @@ function getRecipeId(dishName) {
     dietDiv.append(dietText);
     newDiv.append(dietDiv);
     }
-  
-    // 6 - OTHER WINE SUGGESTIONS (SIDE BAR) ++++ WINE IMAGE??
-  }
+  };
