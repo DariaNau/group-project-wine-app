@@ -4,8 +4,36 @@ $(window).on("load",function(){
   $(".loader-wrapper").fadeOut("slow");
 });
 
+//1
+
+// $(window).on("reload",function(){
+//   localStorage.removeItem("response1");
+//   localStorage.removeItem("response2");
+// });
+
+//2
+
+// window.onbeforeunload = function() {
+//   localStorage.removeItem("response2");
+//   localStorage.removeItem("response1");
+// }
+
+//3 
+
+// window.onbeforeunload = function (e) {
+//   window.onunload = function () {
+//           window.localStorage.isMyLocalActive = "false";
+//   }
+//   return undefined;
+// };
+
+// window.onload = function () {
+//           window.localStorage.isMyLocalActive = "true";
+// };
+
 // GLOBAL VARS
 
+var wineINFO = $("#wineDiv");
 var foodINFO = $("#recipeDiv");
 var foodOPT;
 var wineKEY = "4e2cbd32ae6b47f3acb6348b6fb258f6";
@@ -67,26 +95,28 @@ function wineDataLoad() {
     method: "GET"
   })
     .then(function(wineRes) {
-      var response1 = wineRes.text;
-
       // APPEND RESPONSE ONE (WINE DESCRIPTION) AND SET TO LOCAL STORAGE
-      var wineINFO = $("#wineDiv");
+      var response1 = wineRes.text;
+      console.log(response1)
+      localStorage.setItem("response1", JSON.stringify(response1));
+      wineINFO.empty();
+
       var grapeName = $("<p></p>").text(userInput);
-      wineINFO.html(grapeName);
-      var p = $("<p></p>").text(
-      response1 + " Please select a style of food you're in the mood for to see the recipe!"
-      );
+      wineINFO.prepend(grapeName);
+
+      var response1Local = JSON.parse(localStorage.getItem("response1"));
+      var p = $("<p></p>").text(response1Local + " Please select a style of food you're in the mood for to see the recipe!").addClass("wine-res");
       wineINFO.append(p);
+      
       var response2 = wineRes.pairings;
       localStorage.setItem("response2", JSON.stringify(response2));
-      localStorage.setItem("response1", JSON.stringify(response1));
       foodINFO.empty();
 
       // APPEND RESPONSE TWO (MATCHED FOOD), LINK TO RECIPELOAD.JS, AND SET TO LOCAL STORAGE
       var response2Local = JSON.parse(localStorage.getItem("response2"));
       for (var i = 0; i < response2Local.length; i++) {
         foodOPT = $("<a><button></button></a>")
-          .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
+          .text([i + 1] + "- " + response2Local[i])
           .addClass("pure-button searches")
           .attr("data-name", response2Local[i]);
           var dish = (response2Local[i]);
@@ -113,11 +143,19 @@ function wineDataLoad() {
 
 // LOCAL STORAGE
 
+function renderSearchInfo() {
+  var response1Local = JSON.parse(localStorage.getItem("response1")) || [];
+  console.log(response1Local)
+  var p = $("<div></div>").text(response1Local).addClass("wine-res");
+    wineINFO.append(p);
+}
+
 function renderButtons() {
   var response2Local = JSON.parse(localStorage.getItem("response2")) || [];
+  console.log(response2Local)
   for (var i = 0; i < response2Local.length; i++) {
     foodOPT = $("<a><button></button></a>")
-      .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
+      .text([i + 1] + "- " + response2Local[i])
       .addClass("pure-button searches")
       .attr("data-name", response2Local[i]);
       var dish = (response2Local[i]);
@@ -126,17 +164,12 @@ function renderButtons() {
   }
 }
 
-function renderSearchInfo() {
-
-
-}
-
 function init() {
+  renderSearchInfo();
   renderButtons();
 }
 
 init();
-
 
 
 

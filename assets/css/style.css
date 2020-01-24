@@ -175,4 +175,10 @@ html, body {
 
 }
 
+.wine-res{
+    color: black;
+    background: rgba(216, 230, 216, 0.4);
+    padding: 1%; 
+}
+
 
