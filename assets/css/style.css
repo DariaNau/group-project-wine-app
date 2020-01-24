@@ -2,6 +2,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: 'Playfair Display';
 }
 
 /* Menu Bar Styles */
@@ -70,7 +71,7 @@ html, body {
     background: url('../images/background.jpg');
 }
 
-.pure-button {
+/* .pure-button {
     color: white;
     border-radius: 4px;
     background: maroon;
@@ -80,19 +81,19 @@ html, body {
 .searches {
     width: fit-content;
     display: block;
-    margin: 50px 0;
+    margin: 50px 0; */
     /* border: 2px solid maroon; */
-    background-color: maroon;
+    /* background-color: maroon;
     text-transform: capitalize;
     color: white;
-}
+} */
 
 .winepic {
-    height: 200px;
-    width: 250px;
-    float: right;
-    /* opacity: 0; */
-
+    border-radius: 10px;
+    margin: 2%;
+    float: left;
+    max-width: 60%;
+    height: auto;
 }
 
 .content-subhead {
@@ -102,11 +103,12 @@ html, body {
     border-bottom: 1px solid black;
     padding: 0.4em 0;
     font-size: 80%;
-    font-weight: 500;
+    font-weight: bolder;
     letter-spacing: 0.1em;
 }
 
 .content {
+    font-family: 'Playfair Display', sans-serif;
     margin-top: 2em;
     padding-top: 2em;
     padding: 2em 1em 0;
@@ -135,7 +137,14 @@ html, body {
 }
 
 #dish-image {
-    float: right;
+    margin: 2% auto;
+    border-radius: 10px;
+    max-width: auto;
+    height: auto;
+    border: rgba(45, 59, 17, 0.185);
+    border-style: solid;
+    border-width: 5px;
+
 }
 
 @media (min-width: 48em) {
@@ -172,13 +181,96 @@ html, body {
         .home-menu ul {
             float: right;
         }    
-
 }
 
-.wine-res{
+  /* API response styling */
+
+.ajax-response-one{
+    line-height: 1.5;
+    margin: 2% auto;
     color: black;
     background: rgba(216, 230, 216, 0.4);
+    border-radius: 25px;
     padding: 1%; 
+    width: fit-content;
+    padding: 3%;
+    border: rgba(212, 203, 203, 0.4);
+    border-style: solid;
+    border-width: 5px;
 }
+
+.grapename{
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+
+.image-text-div{
+    display: flex;
+}
+
+#wineDiv{
+    font-size: larger;
+    flex-basis: 1;
+    margin: 2%;
+}
+
+a.pure-button.searches{
+    width: 100%;
+    padding: 2%;
+    display: block;
+    margin: 2% auto;
+    /* border: 2px solid maroon; */
+    background-color: maroon;
+    text-transform: capitalize;
+    color: whitesmoke;
+    opacity: 90%;
+    font-size: 130%;
+    border-radius: 25px;
+    text-align: center !important;
+  }
+
+  #searchBtn{
+    color: whitesmoke;
+    background-color: maroon;
+    opacity: 85%;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+
+  /* recipe.html styling here */
+
+  .pure-button{
+    color: whitesmoke;
+    background-color: maroon;
+    opacity: 85%;
+    border-radius: 10px;
+    text-transform: capitalize;
+    margin: 1%;
+  }
+
+  #recipe-card{
+    line-height: 1.5;
+    margin: 3% auto;
+    color: black;
+    background: rgba(216, 230, 216, 0.4);
+    border-radius: 25px;
+    padding: 1%; 
+    width: fit-content;
+    max-width: 80%;
+    padding: 3%;
+    border: rgba(212, 203, 203, 0.4);
+    border-style: solid;
+    border-width: 5px;
+  }
+
+  /* .wine-res{
+    color: black;
+    background: rgba(216, 230, 216, 0.4);
+    border-style: solid maroon 1px;
+    padding: 1%; 
+    width: fit-content;
+  } */
 
 
