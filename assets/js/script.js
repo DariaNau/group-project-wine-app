@@ -1,6 +1,10 @@
+// LOADER ACTIVATED
+
 $(window).on("load",function(){
   $(".loader-wrapper").fadeOut("slow");
 });
+
+// GLOBAL VARS
 
 var foodINFO = $("#recipeDiv");
 var foodOPT;
@@ -25,10 +29,10 @@ $("#searchBtn").click(function() {
   wineDataLoad();
 });
 
-// MOST POPULAR SEARCHES - WORK IN PROGRESS ____________________________________________________________________________________
+
+// MOST POPULAR SEARCHES - BACK UP CODE IN CASE ALGOLIA FAILS
 
 // const suggestedSearch = ['Albarino', 'Beaujolais','Cabernet Sauvignon', 'Cava', 'Champagne', 'Chardonnay', 'Chenin Blanc', 'Grenache', 'Malbec', 'Merlot', 'Pinot Grigio', 'Pinot Noir', 'Sauvignon Blanc', 'Zinfandel'];
-
 // $("#userInput").keydown(function(){
 //     var val = $(this).val()
 //     $("#suggestedSearch").html("")
@@ -39,8 +43,7 @@ $("#searchBtn").click(function() {
 //             $("#suggestedSearch").append(item)
 //         }
 //     }
-// })
-
+// });
 // $(document).on("click", ".selectSearch", function(){
 //     var searchItem = $(this).text()
 //     $("#suggestedSearch").html("")
@@ -65,6 +68,8 @@ function wineDataLoad() {
   })
     .then(function(wineRes) {
       var response1 = wineRes.text;
+
+      // APPEND RESPONSE ONE (WINE DESCRIPTION) AND SET TO LOCAL STORAGE
       var wineINFO = $("#wineDiv");
       var grapeName = $("<p></p>").text(userInput);
       wineINFO.html(grapeName);
@@ -74,23 +79,22 @@ function wineDataLoad() {
       wineINFO.append(p);
       var response2 = wineRes.pairings;
       localStorage.setItem("response2", JSON.stringify(response2));
+      localStorage.setItem("response1", JSON.stringify(response1));
       foodINFO.empty();
 
-      // Loop to append pairing options
-
+      // APPEND RESPONSE TWO (MATCHED FOOD), LINK TO RECIPELOAD.JS, AND SET TO LOCAL STORAGE
       var response2Local = JSON.parse(localStorage.getItem("response2"));
       for (var i = 0; i < response2Local.length; i++) {
         foodOPT = $("<a><button></button></a>")
           .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
           .addClass("pure-button searches")
           .attr("data-name", response2Local[i]);
-
           var dish = (response2Local[i]);
           foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
-        foodINFO.append(foodOPT);
+          foodINFO.append(foodOPT);
       }
 
-      //clear input area
+      // clear input area
 
       $("#userInput").val("");
 
@@ -107,29 +111,31 @@ function wineDataLoad() {
     });
 }
 
-// ------------------------LOCAL STORAGE TO FINISH
+// LOCAL STORAGE
 
-// function renderButtons() {
-//   var response2Local = JSON.parse(localStorage.getItem("response2")) || [];
-//   for (var i = 0; i < response2Local.length; i++) {
-//     foodOPT = $("<a><button></button></a>")
-//       .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
-//       .addClass("pure-button searches")
-//       .attr("data-name", response2Local[i]);
+function renderButtons() {
+  var response2Local = JSON.parse(localStorage.getItem("response2")) || [];
+  for (var i = 0; i < response2Local.length; i++) {
+    foodOPT = $("<a><button></button></a>")
+      .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
+      .addClass("pure-button searches")
+      .attr("data-name", response2Local[i]);
+      var dish = (response2Local[i]);
+    foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
+    foodINFO.append(foodOPT);
+  }
+}
 
-//       var dish = (response2Local[i]);
-//     foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
-//     foodINFO.append(foodOPT);
-//   }
-// }
+function renderSearchInfo() {
 
-// function init() {
-//   renderButtons();
-// }
 
-// init();
+}
 
-// ------------------------LOCAL STORAGE TO FINISH
+function init() {
+  renderButtons();
+}
+
+init();
 
 
 
