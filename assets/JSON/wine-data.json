@@ -1,9 +1,37 @@
-{
-    "drinks": [
+
+    [
       {
-        "strDrink": "Pinot Noir"
+        "strDrink": "Albarino"
       },
   
+      {
+        "strDrink": "Beaujolais"
+      },
+  
+      {
+        "strDrink": "Cabernet Sauvignon"
+      },
+  
+      {
+        "strDrink": "Cava"
+      },
+
+      {
+        "strDrink": "Champagne"
+      },
+  
+      {
+        "strDrink": "Chardonnay"
+      },
+  
+      {
+        "strDrink": "Chenin Blanc"
+      },
+  
+      {
+        "strDrink": "Grenache"
+      },
+
       {
         "strDrink": "Malbec"
       },
@@ -13,8 +41,22 @@
       },
   
       {
-        "strDrink": "Cabernet Sauvignon"
+        "strDrink": "Pinot Grigio"
+      },
+  
+      {
+        "strDrink": "Pinot Noir"
+      },
+
+      {
+        "strDrink": "Sauvignon Blanc"
+      },
+  
+      {
+        "strDrink": "Zinfandel"
       }
     ]
-  }
+  
+
+
   
