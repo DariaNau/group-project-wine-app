@@ -92,7 +92,7 @@ html, body {
     height: 200px;
     width: 250px;
     float: right;
-    opacity: 0;
+    /* opacity: 0; */
 
 }
 
