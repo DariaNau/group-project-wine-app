@@ -68,7 +68,6 @@ html, body {
     height: 100%;
     margin: 0;
     background: url('../images/background.jpg');
-    font-family: 'Playfair Display';
 }
 
 .pure-button {
@@ -112,6 +111,9 @@ html, body {
     padding-top: 2em;
     padding: 2em 1em 0;
     position: relative;
+}
+
+.content-head {
     font-family: 'Playfair Display';
 }
 
