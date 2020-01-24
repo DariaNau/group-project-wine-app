@@ -33,6 +33,11 @@ $("#searchBtn").click(function () {
 function winePic() {
 
   var userInput = $("#userInput").val().trim();
+
+  if (!userInput) {
+    return;
+  }
+
   var PixApi = "15004714-f70ecef57d334669bf16638ab";
   var pixURL = "https://pixabay.com/api/?key=" + PixApi + "&q=" + userInput + "&image_type=photo";
 
@@ -49,7 +54,11 @@ function winePic() {
   });
 };
 
+///////////when nothing is inputed in userInput, do not display a picture
+// function(display){
 
+// if (userInput === "none")
+// } else("#winepic") {display="none"
 // };
 
 
