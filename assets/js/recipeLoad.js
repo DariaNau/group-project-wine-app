@@ -83,11 +83,13 @@ function getRecipeId(dishName) {
     }
   
     // 5 - ALLERGY INFO
-      
     var diet = dataArr.diets;
-    dietText = $("#diets");
-    dietText.append(diet).addClass("pure-button");
-    newDiv.append(dietText);
+    for (var i = 0; i < diet.length; i++) {
+    dietText = $("<button>").text(diet[i]).addClass("pure-button");
+    dietDiv = $("#diets");
+    dietDiv.append(dietText);
+    newDiv.append(dietDiv);
+    }
   
     // 6 - OTHER WINE SUGGESTIONS (SIDE BAR) ++++ WINE IMAGE??
   }
