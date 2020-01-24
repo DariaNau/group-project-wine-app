@@ -20,16 +20,16 @@ $(window).on("load",function(){
 
 //3 
 
-// window.onbeforeunload = function (e) {
-//   window.onunload = function () {
-//           window.localStorage.isMyLocalActive = "false";
-//   }
-//   return undefined;
-// };
+window.onbeforeunload = function (e) {
+  window.onunload = function () {
+          window.sessionStorage.isMySessionActive = "false";
+  }
+  return undefined;
+};
 
-// window.onload = function () {
-//           window.localStorage.isMyLocalActive = "true";
-// };
+window.onload = function () {
+          window.sessionStorage.isMySessionActive = "true";
+};
 
 // GLOBAL VARS
 
