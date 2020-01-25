@@ -11,8 +11,8 @@ $(window).on("load", function () {
 var wineINFO = $("#wineDiv");
 var foodINFO = $("#recipeDiv");
 var foodOPT;
-var wineKEY = "50e942eafbb0432890384d40751871de";
-// extra key 6889c76ff69c4a49aa7f5c9d4c6dd71c
+var wineKEY = "6889c76ff69c4a49aa7f5c9d4c6dd71c";
+// extra key 50e942eafbb0432890384d40751871de
 
 // if enter is pressed by user trigger the on(click) function
 

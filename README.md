@@ -2,8 +2,7 @@
 
 ## Introduction
 
-A casual app for pairing food recipes with a user’s choice bottle. As you type in a name of a wine, you will get a small description and picture of the chosen wine. A list of recipes will appear as buttons on the page. When a button is chosen, a page will display showing the recipe. 
-
+A casual app for pairing food recipes with a user’s choice bottle. As you type in a name of a wine, you will get a small description and picture of the chosen wine. A list of recipes will appear as buttons on the page. When a button is chosen, a page will display showing the recipe.
 
 ## Installation
 
@@ -12,11 +11,12 @@ Please visit the deployed project at: https://darianau.github.io/project-1/
 ## Technologies
 
 - Spoonacular API is used to retrieve matching food options & recipe data for wine of user's choice;
+- Pixabay API generates an image based on user's input;  
 - Pure CSS adds responsive CSS modules that are used to creare Web Design;  
 - AJAX is used to hook into the APIs to retrieve data in JSON format;  
 - The App runs in the browser and features dynamically updated HTML and CSS powered by jQuery.
 
-# User Story
+## User Story
 
 AS A casual wine consumer  
 
@@ -24,21 +24,32 @@ I WANT to find food recipes that will accompany my wine choice
 
 SO THAT can enchance my dining experience  
 
-# User Flow Diagram 
+## User Flow Diagram 
 
 Search Bar Input: Type of wine ->    
 Response will have food recipes that pair with the wine ->  
 Select the best looking option ->  
 Get the recipe and use it.
 
-# Sources
+## Illustrations
 
+![wine&Dine](/assets/images/illustration.png)
+
+## Sources
+
+### Server-Side APIs:
 - Food Recipes and Wine API https://spoonacular.com/food-api/docs#Get-Dish-Pairing-for-Wine  
-- Warning modals CDN https://sweetalert.js.org/
 - Pixabay API https://pixabay.com/api/docs/
+
+### Third-Party APIs:
 - Algolia API https://www.algolia.com/doc/
 - FontAwesome Icons https://fontawesome.com/license
+- Warning modals CDN https://sweetalert.js.org/
+- JQuery https://jquery.com/ 
 
+### Additional:
+- Logo for Wine & Dine https://www.brandcrowd.com/ 
+- Food and Wine Pairing Information https://winefolly.com/ 
 
 ## License
 

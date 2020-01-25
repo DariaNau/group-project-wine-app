@@ -19,5 +19,4 @@ autocomplete('#userInput', { hint: true }, [
 ]).on('autocomplete:selected', function (event, suggestion, dataset, context) {
   console.log(event, suggestion, dataset, context);
   console.log(dataset.strDrink);
-
 });
