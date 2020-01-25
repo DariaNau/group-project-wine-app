@@ -1,9 +1,9 @@
 .algolia-autocomplete {
-    width: 100%;
+    width: 40%;
   }
   .algolia-autocomplete .aa-input,
   .algolia-autocomplete .aa-hint {
-    width: 40%;
+    width: 100%;
   }
   .algolia-autocomplete .aa-hint {
     color: #999;
