@@ -138,8 +138,9 @@ body {
     margin: 2%;
     /* float: left; */
     max-width: 50%;
-    max-height: 200px;
+    max-height: 280px;
     flex-basis: 1;
+    word-wrap: wrap;
 }
 
 .ajax-response-one {
@@ -160,6 +161,7 @@ body {
     text-transform: uppercase;
     font-weight: bolder;
     font-size: larger;
+    margin-top: 0 ;
 }
 
 
@@ -170,7 +172,7 @@ body {
 #wineDiv {
     font-size: larger;
     flex-basis: 1;
-    margin: 2%;
+    margin: 1%;
     /* float: right;
     position: relative; */
 }
