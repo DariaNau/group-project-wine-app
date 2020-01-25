@@ -1,6 +1,42 @@
+// LOADER ACTIVATED
+
+$(window).on("load",function(){
+  $(".loader-wrapper").fadeOut("slow");
+});
+
+//1
+
+// $(window).on("reload",function(){
+//   localStorage.removeItem("response1");
+//   localStorage.removeItem("response2");
+// });
+
+//2
+
+// window.onbeforeunload = function() {
+//   localStorage.removeItem("response2");
+//   localStorage.removeItem("response1");
+// }
+
+//3 
+
+window.onbeforeunload = function (e) {
+  window.onunload = function () {
+          window.sessionStorage.isMySessionActive = "false";
+  }
+  return undefined;
+};
+
+window.onload = function () {
+          window.sessionStorage.isMySessionActive = "true";
+};
+
+// GLOBAL VARS
+
+var wineINFO = $("#wineDiv");
 var foodINFO = $("#recipeDiv");
 var foodOPT;
-var wineKEY = "a8eab2c977d84c6ab3accce519ed8c4a";
+var wineKEY = "4e2cbd32ae6b47f3acb6348b6fb258f6";
 
 // if enter is pressed by user trigger the on(click) function
 
@@ -21,10 +57,10 @@ $("#searchBtn").click(function() {
   wineDataLoad();
 });
 
-// MOST POPULAR SEARCHES - WORK IN PROGRESS ____________________________________________________________________________________
+
+// MOST POPULAR SEARCHES - BACK UP CODE IN CASE ALGOLIA FAILS
 
 // const suggestedSearch = ['Albarino', 'Beaujolais','Cabernet Sauvignon', 'Cava', 'Champagne', 'Chardonnay', 'Chenin Blanc', 'Grenache', 'Malbec', 'Merlot', 'Pinot Grigio', 'Pinot Noir', 'Sauvignon Blanc', 'Zinfandel'];
-
 // $("#userInput").keydown(function(){
 //     var val = $(this).val()
 //     $("#suggestedSearch").html("")
@@ -35,8 +71,7 @@ $("#searchBtn").click(function() {
 //             $("#suggestedSearch").append(item)
 //         }
 //     }
-// })
-
+// });
 // $(document).on("click", ".selectSearch", function(){
 //     var searchItem = $(this).text()
 //     $("#suggestedSearch").html("")
@@ -60,33 +95,36 @@ function wineDataLoad() {
     method: "GET"
   })
     .then(function(wineRes) {
+      // APPEND RESPONSE ONE (WINE DESCRIPTION) AND SET TO LOCAL STORAGE
       var response1 = wineRes.text;
-      var wineINFO = $("#wineDiv");
+      console.log(response1)
+      localStorage.setItem("response1", JSON.stringify(response1));
+      wineINFO.empty();
+
       var grapeName = $("<p></p>").text(userInput);
-      wineINFO.html(grapeName);
-      var p = $("<p></p>").text(
-      response1 + " Please select a style of food you're in the mood for to see the recipe!"
-      );
+      wineINFO.prepend(grapeName);
+
+      var response1Local = JSON.parse(localStorage.getItem("response1"));
+      var p = $("<p></p>").text(response1Local + " Please select a style of food you're in the mood for to see the recipe!").addClass("wine-res");
       wineINFO.append(p);
+      
       var response2 = wineRes.pairings;
       localStorage.setItem("response2", JSON.stringify(response2));
       foodINFO.empty();
 
-      // Loop to append pairing options
-
+      // APPEND RESPONSE TWO (MATCHED FOOD), LINK TO RECIPELOAD.JS, AND SET TO LOCAL STORAGE
       var response2Local = JSON.parse(localStorage.getItem("response2"));
       for (var i = 0; i < response2Local.length; i++) {
         foodOPT = $("<a><button></button></a>")
-          .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
+          .text([i + 1] + "- " + response2Local[i])
           .addClass("pure-button searches")
           .attr("data-name", response2Local[i]);
-
           var dish = (response2Local[i]);
           foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
-        foodINFO.append(foodOPT);
+          foodINFO.append(foodOPT);
       }
 
-      //clear input area
+      // clear input area
 
       $("#userInput").val("");
 
@@ -103,30 +141,35 @@ function wineDataLoad() {
     });
 }
 
-// ------------------------LOCAL STORAGE TO FINISH
+// LOCAL STORAGE
 
-// function renderButtons() {
-//   var response2Local = JSON.parse(localStorage.getItem("response2")) || [];
-//   for (var i = 0; i < response2Local.length; i++) {
-//     foodOPT = $("<a><button></button></a>")
-//       .text("Food pairing option " + [i + 1] + ": " + response2Local[i])
-//       .addClass("pure-button searches")
-//       .attr("data-name", response2Local[i]);
+function renderSearchInfo() {
+  var response1Local = JSON.parse(localStorage.getItem("response1")) || [];
+  console.log(response1Local)
+  var p = $("<div></div>").text(response1Local).addClass("wine-res");
+    wineINFO.append(p);
+}
 
-//       var dish = (response2Local[i]);
-//     foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
-//     foodINFO.append(foodOPT);
-//   }
-// }
+function renderButtons() {
+  var response2Local = JSON.parse(localStorage.getItem("response2")) || [];
+  console.log(response2Local)
+  for (var i = 0; i < response2Local.length; i++) {
+    foodOPT = $("<a><button></button></a>")
+      .text([i + 1] + "- " + response2Local[i])
+      .addClass("pure-button searches")
+      .attr("data-name", response2Local[i]);
+      var dish = (response2Local[i]);
+    foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
+    foodINFO.append(foodOPT);
+  }
+}
 
-// function init() {
-//   renderButtons();
-// }
+function init() {
+  renderSearchInfo();
+  renderButtons();
+}
 
-// init();
-
-// ------------------------LOCAL STORAGE TO FINISH
-
+init();
 
 
 
