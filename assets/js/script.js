@@ -20,16 +20,16 @@ $(window).on("load",function(){
 
 //3 
 
-window.onbeforeunload = function (e) {
-  window.onunload = function () {
-          window.sessionStorage.isMySessionActive = "false";
-  }
-  return undefined;
-};
+// window.onbeforeunload = function (e) {
+//   window.onunload = function () {
+//           window.sessionStorage.isMySessionActive = "false";
+//   }
+//   return undefined;
+// };
 
-window.onload = function () {
-          window.sessionStorage.isMySessionActive = "true";
-};
+// window.onload = function () {
+//           window.sessionStorage.isMySessionActive = "true";
+// };
 
 // GLOBAL VARS
 
@@ -37,8 +37,6 @@ var wineINFO = $("#wineDiv");
 var foodINFO = $("#recipeDiv");
 var foodOPT;
 var wineKEY = "50e942eafbb0432890384d40751871de";
-
-
 // extra key 6889c76ff69c4a49aa7f5c9d4c6dd71c
 
 // if enter is pressed by user trigger the on(click) function
@@ -60,27 +58,6 @@ $("#searchBtn").click(function() {
   wineDataLoad();
 });
 
-
-// MOST POPULAR SEARCHES - BACK UP CODE IN CASE ALGOLIA FAILS
-
-// const suggestedSearch = ['Albarino', 'Beaujolais','Cabernet Sauvignon', 'Cava', 'Champagne', 'Chardonnay', 'Chenin Blanc', 'Grenache', 'Malbec', 'Merlot', 'Pinot Grigio', 'Pinot Noir', 'Sauvignon Blanc', 'Zinfandel'];
-// $("#userInput").keydown(function(){
-//     var val = $(this).val()
-//     $("#suggestedSearch").html("")
-
-//     for(var i = 0; i < suggestedSearch.length; i++){
-//         if(suggestedSearch[i].includes(val)){
-//             var item = $("<div>").text(suggestedSearch[i]).addClass('selectSearch')
-//             $("#suggestedSearch").append(item)
-//         }
-//     }
-// });
-// $(document).on("click", ".selectSearch", function(){
-//     var searchItem = $(this).text()
-//     $("#suggestedSearch").html("")
-//     $('#userInput').val(searchItem)
-// })
-
 function wineDataLoad() {
   var userInput = $("#userInput")
     .val()
@@ -101,22 +78,22 @@ function wineDataLoad() {
       // APPEND RESPONSE ONE (WINE DESCRIPTION) AND SET TO LOCAL STORAGE
       var response1 = wineRes.text;
       console.log(response1)
-      localStorage.setItem("response1", JSON.stringify(response1));
+      sessionStorage.setItem("response1", JSON.stringify(response1));
       wineINFO.empty();
 
       var grapeName = $("<p></p>").text(userInput).addClass("grapename");
       wineINFO.prepend(grapeName);
 
-      var response1Local = JSON.parse(localStorage.getItem("response1"));
+      var response1Local = JSON.parse(sessionStorage.getItem("response1"));
       var p = $("<p></p>").text(response1Local + " Please select a style of food you're in the mood for to see the recipe!").addClass("wine-res");
       wineINFO.append(p);
       
       var response2 = wineRes.pairings;
-      localStorage.setItem("response2", JSON.stringify(response2));
+      sessionStorage.setItem("response2", JSON.stringify(response2));
       foodINFO.empty();
 
       // APPEND RESPONSE TWO (MATCHED FOOD), LINK TO RECIPELOAD.JS, AND SET TO LOCAL STORAGE
-      var response2Local = JSON.parse(localStorage.getItem("response2"));
+      var response2Local = JSON.parse(sessionStorage.getItem("response2"));
       for (var i = 0; i < response2Local.length; i++) {
         foodOPT = $("<a><button></button></a>")
           .text(response2Local[i])
@@ -147,14 +124,14 @@ function wineDataLoad() {
 // LOCAL STORAGE
 
 function renderSearchInfo() {
-  var response1Local = JSON.parse(localStorage.getItem("response1")) || [];
+  var response1Local = JSON.parse(sessionStorage.getItem("response1")) || [];
   console.log(response1Local)
   var p = $("<div></div>").text(response1Local).addClass("wine-res");
     wineINFO.append(p);
 }
 
 function renderButtons() {
-  var response2Local = JSON.parse(localStorage.getItem("response2")) || [];
+  var response2Local = JSON.parse(sessionStorage.getItem("response2")) || [];
   console.log(response2Local)
   for (var i = 0; i < response2Local.length; i++) {
     foodOPT = $("<a><button></button></a>")
@@ -173,6 +150,27 @@ function init() {
 }
 
 init();
+
+
+// MOST POPULAR SEARCHES - BACK UP CODE IN CASE ALGOLIA FAILS
+
+// const suggestedSearch = ['Albarino', 'Beaujolais','Cabernet Sauvignon', 'Cava', 'Champagne', 'Chardonnay', 'Chenin Blanc', 'Grenache', 'Malbec', 'Merlot', 'Pinot Grigio', 'Pinot Noir', 'Sauvignon Blanc', 'Zinfandel'];
+// $("#userInput").keydown(function(){
+//     var val = $(this).val()
+//     $("#suggestedSearch").html("")
+
+//     for(var i = 0; i < suggestedSearch.length; i++){
+//         if(suggestedSearch[i].includes(val)){
+//             var item = $("<div>").text(suggestedSearch[i]).addClass('selectSearch')
+//             $("#suggestedSearch").append(item)
+//         }
+//     }
+// });
+// $(document).on("click", ".selectSearch", function(){
+//     var searchItem = $(this).text()
+//     $("#suggestedSearch").html("")
+//     $('#userInput').val(searchItem)
+// })
 
 
 
