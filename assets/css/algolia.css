@@ -3,7 +3,8 @@
   }
   .algolia-autocomplete .aa-input,
   .algolia-autocomplete .aa-hint {
-    width: 100%;
+    width: 40%;
+    border-radius: 10px;
   }
   .algolia-autocomplete .aa-hint {
     color: #999;

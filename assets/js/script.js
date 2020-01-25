@@ -36,7 +36,10 @@ window.onload = function () {
 var wineINFO = $("#wineDiv");
 var foodINFO = $("#recipeDiv");
 var foodOPT;
-var wineKEY = "4e2cbd32ae6b47f3acb6348b6fb258f6";
+var wineKEY = "50e942eafbb0432890384d40751871de";
+
+
+// extra key 6889c76ff69c4a49aa7f5c9d4c6dd71c
 
 // if enter is pressed by user trigger the on(click) function
 
@@ -101,7 +104,7 @@ function wineDataLoad() {
       localStorage.setItem("response1", JSON.stringify(response1));
       wineINFO.empty();
 
-      var grapeName = $("<p></p>").text(userInput);
+      var grapeName = $("<p></p>").text(userInput).addClass("grapename");
       wineINFO.prepend(grapeName);
 
       var response1Local = JSON.parse(localStorage.getItem("response1"));
@@ -116,7 +119,7 @@ function wineDataLoad() {
       var response2Local = JSON.parse(localStorage.getItem("response2"));
       for (var i = 0; i < response2Local.length; i++) {
         foodOPT = $("<a><button></button></a>")
-          .text([i + 1] + "- " + response2Local[i])
+          .text(response2Local[i])
           .addClass("pure-button searches")
           .attr("data-name", response2Local[i]);
           var dish = (response2Local[i]);
@@ -155,7 +158,7 @@ function renderButtons() {
   console.log(response2Local)
   for (var i = 0; i < response2Local.length; i++) {
     foodOPT = $("<a><button></button></a>")
-      .text([i + 1] + "- " + response2Local[i])
+      .text(response2Local[i])
       .addClass("pure-button searches")
       .attr("data-name", response2Local[i]);
       var dish = (response2Local[i]);
