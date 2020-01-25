@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Work in progress...
+A casual app for pairing food recipes with a user’s choice bottle. As you type in a name of a wine, you will get a small description and picture of the chosen wine. A list of recipes will appear as buttons on the page. When a button is chosen, a page will display showing the recipe. 
+
 
 ## Installation
 
@@ -30,16 +31,14 @@ Response will have food recipes that pair with the wine ->
 Select the best looking option ->  
 Get the recipe and use it.
 
-# Illustrations
-
-<!-- IMAGE OF LOADING PAGE AND RECIPE PAGE TO BE ADDED -->
-
 # Sources
 
 - Food Recipes and Wine API https://spoonacular.com/food-api/docs#Get-Dish-Pairing-for-Wine  
-- Pure Css
 - Warning modals CDN https://sweetalert.js.org/
 - Pixabay API https://pixabay.com/api/docs/
+- Algolia API https://www.algolia.com/doc/
+- FontAwesome Icons https://fontawesome.com/license
+
 
 ## License
 
