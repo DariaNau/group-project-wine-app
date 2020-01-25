@@ -2,7 +2,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Playfair Display';
 }
 
 /* Menu Bar Styles */
@@ -65,6 +64,7 @@
 .sidebar {
     background: maroon;
     color: #fff;
+    position: relative;
     /* margin-top: 2em; */
 }
 
@@ -125,7 +125,7 @@ html, body {
 }
 
 .content {
-    font-family: 'Playfair Display', sans-serif;
+    font-family:sans-serif;
     margin-top: 2em;
     padding-top: 2em;
     padding: 2em 1em 0;
@@ -248,12 +248,17 @@ a.pure-button.searches{
     text-align: center !important;
   }
 
+  #userInput {
+      float: left;
+  }
+
   #searchBtn{
     color: whitesmoke;
     background-color: maroon;
     opacity: 85%;
     border-radius: 10px;
     text-transform: capitalize;
+    float: left;
   }
 
   /* recipe.html styling here */
