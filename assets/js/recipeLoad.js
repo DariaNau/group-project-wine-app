@@ -1,21 +1,9 @@
 // LOADER ACTIVATED
 
+$(".content").hide();
 $(window).on("load", function () {
   $(".loader-wrapper").fadeOut("slow");
 });
-
-// APPEND RESPONSE ONE (WINE DESCRIPTION) AND SET TO LOCAL STORAGE
-// var wineINFO = $("#wineDiv");
-// var grapeName = $("<p></p>").text(userInput);
-// wineINFO.html(grapeName);
-// var p = $("<p></p>").text(
-// response1 + " Please select a style of food you're in the mood for to see the recipe!"
-// );
-// wineINFO.append(p);
-// var response2 = wineRes.pairings;
-// localStorage.setItem("response2", JSON.stringify(response2));
-// localStorage.setItem("response1", JSON.stringify(response1));
-// foodINFO.empty();
 
 // GLOBAL VARS (PASSING DATA FROM SCRIPT>JS VIA URL PARAMETERS)
 
@@ -63,6 +51,7 @@ function getRecipeInfo(recipeID) {
 function loadRecipe(dataArr) {
 
   var newDiv = $("#recipe-card");
+   $(".content").show();
 
   // 1 - DISH TITLE
 
