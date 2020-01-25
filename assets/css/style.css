@@ -271,10 +271,6 @@ a.pure-button.searches {
     border-width: 5px;
 }
 
-/* .wine-res{
-    color: black;
-    background: rgba(216, 230, 216, 0.4);
-    border-style: solid maroon 1px;
-    padding: 1%; 
-    width: fit-content;
-  } */
+#dish-title{
+    text-align: center;
+  }

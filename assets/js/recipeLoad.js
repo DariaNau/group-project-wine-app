@@ -1,10 +1,9 @@
 // LOADER ACTIVATED
 
-$("#recipe-card").hide();
+$(".content").hide();
 $(window).on("load", function () {
   $(".loader-wrapper").fadeOut("slow");
 });
-$("#recipe-card").show();
 
 // GLOBAL VARS (PASSING DATA FROM SCRIPT>JS VIA URL PARAMETERS)
 
@@ -52,6 +51,7 @@ function getRecipeInfo(recipeID) {
 function loadRecipe(dataArr) {
 
   var newDiv = $("#recipe-card");
+   $(".content").show();
 
   // 1 - DISH TITLE
 
