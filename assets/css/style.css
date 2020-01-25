@@ -39,24 +39,26 @@
 .home-menu a {
     color: #6FBEF3;
 }
+*/
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
     color: #AECFE5;
-} */
+}
 
 /* Page Layout*/
+#layout {
+    padding: 0;
+}
+
+/* Sidebar */
 .pure-img-responsive {
     width: 220px;
     height: 100%;
     margin-top: 2em;
     margin-left: 2em;
     margin-right: 2em;
-}
-
-#layout {
-    padding: 0;
 }
 
 .sidebar {
@@ -83,7 +85,6 @@ html, body {
 #suggestedSearch {
     width: 10%;
     margin: 0;
-    float: right;
 }
 
 .pure-button {
@@ -193,8 +194,12 @@ html, body {
 
 .wine-res{
     color: black;
-    background: rgba(216, 230, 216, 0.4);
+    background: none;
     padding: 1%; 
+}
+
+#dish-image {
+    margin-left: -1em;
 }
 
 
