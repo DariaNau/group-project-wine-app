@@ -2,10 +2,20 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Playfair Display';
 }
 
 /* Menu Bar Styles */
+/* .home {
+    width: 20px;
+    height: 20px;
+    text-align: right;
+}
+
+.header {
+    margin: 0;
+    text-align: right;
+    width: 80%;
+}
 .home-menu {
     padding: 0.5em;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
@@ -13,15 +23,13 @@
 }
 
 .pure-menu.pure-menu-fixed {
-    /* Fixed menus normally have a border at the bottom. */
     border-bottom: none;
-    /* I need a higher z-index here because of the scroll-over effect. */
     z-index: 4;
 }
 
 .home-menu .pure-menu-heading {
-    color: white;
-    font-weight: 450;
+    color: black;
+    font-weight: 600;
     font-size: 200%;
     text-align: left;
     font-family: 'Playfair Display';
@@ -35,68 +43,66 @@
 .home-menu a {
     color: #6FBEF3;
 }
-
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
     color: #AECFE5;
-}
+} */
 
 /* Page Layout*/
+#layout {
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    font-size: 16px;
+}
+
+
+
+/* Sidebar */
 .pure-img-responsive {
     width: 220px;
     height: 100%;
-    margin-top: 2em;
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-#layout {
-    padding: 0;
 }
 
 .sidebar {
     background: maroon;
     color: #fff;
+    position: fixed;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    /* margin-top: 2em; */
+}
+
+
+/* Content */
+.content {
+    font-family:sans-serif;
     margin-top: 2em;
+    padding-top: 2em;
+    padding: 2em 1em 0;
+    position: relative;
+    padding: 2em 3em 0;
+    margin-left: 20%;
 }
 
-.home {
-    width: 20px;
-    height: 20px;
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    background: url('../images/background.jpg');
-}
-
-/* .pure-button {
-    color: white;
-    border-radius: 4px;
-    background: maroon;
-    text-shadow: 0 1px 1px rgba(0,0,0, 0.2);
-}
-
-.searches {
-    width: fit-content;
-    display: block;
-    margin: 50px 0; */
-/* border: 2px solid maroon; */
-/* background-color: maroon;
-    text-transform: capitalize;
-    color: white;
-} */
-
-.winepic {
-    border-radius: 10px;
-    margin: 2%;
-    float: left;
-    max-width: 60%;
-    height: auto;
+.content-head {
+    font-family: 'Playfair Display';
 }
 
 .content-subhead {
@@ -110,86 +116,29 @@ body {
     letter-spacing: 0.1em;
 }
 
-.content {
-    font-family: 'Playfair Display', sans-serif;
-    margin-top: 2em;
-    padding-top: 2em;
-    padding: 2em 1em 0;
-    position: relative;
+/* Search Bar */
+#suggestedSearch {
+    width: 10%;
+    margin: 0;
 }
 
-.content-head {
-    font-family: 'Playfair Display';
-}
-
-.footer {
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    background: none;
-    padding: 1em 0;
-    text-align: center;
-}
-
-.footer a {
-    color: black;
-    font-size: 80%;
-}
-
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-    background: none;
-}
-
-#dish-image {
-    margin: 2% auto;
+#searchBtn {
+    color: whitesmoke;
+    background-color: maroon;
+    opacity: 85%;
     border-radius: 10px;
-    max-width: auto;
-    height: auto;
-    border: rgba(45, 59, 17, 0.185);
-    border-style: solid;
-    border-width: 5px;
-
+    text-transform: capitalize;
+    margin-top: -.5em;
 }
 
-@media (min-width: 48em) {
-    .content {
-        padding: 2em 3em 0;
-        margin-left: 20%;
-    }
-
-    /* .header {
-        margin: 80% 2em 0;
-        text-align: left;
-    } */
-
-    .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-    }
-
-    .footer {
-        text-align: center;
-    }
-
-    /* We increase the body font size */
-    body {
-        font-size: 16px;
-    }
-
-    /* We can align the menu header to the left, but float the
-    menu items to the right. */
-    .home-menu {
-        text-align: left;
-    }
-
-    .home-menu ul {
-        float: right;
-    }
+/* Wine Search Results*/
+.winepic {
+    border-radius: 10px;
+    margin: 2%;
+    float: left;
+    max-width: 60%;
+    height: 200px;
 }
-
-/* API response styling */
 
 .ajax-response-one {
     line-height: 1.5;
@@ -220,8 +169,11 @@ body {
     font-size: larger;
     flex-basis: 1;
     margin: 2%;
+    float: right;
+    position: relative;
 }
 
+/* Recommended Dishes Search Results */
 a.pure-button.searches {
     width: 100%;
     padding: 2%;
@@ -236,16 +188,7 @@ a.pure-button.searches {
     border-radius: 25px;
     text-align: center !important;
 }
-
-#searchBtn {
-    color: whitesmoke;
-    background-color: maroon;
-    opacity: 85%;
-    border-radius: 10px;
-    text-transform: capitalize;
-}
-
-/* recipe.html styling here */
+/* Recipe Page Styling */
 
 .pure-button {
     color: whitesmoke;
@@ -273,4 +216,70 @@ a.pure-button.searches {
 
 #dish-title{
     text-align: center;
-  }
+}
+
+#dish-image {
+    margin: 2% auto;
+    border-radius: 10px;
+    max-width: auto;
+    height: auto;
+    border: rgba(45, 59, 17, 0.185);
+    border-style: solid;
+    border-width: 5px;
+
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: none;
+    text-align: center;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.footer a {
+    color: black;
+    font-size: 80%;
+}
+
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+    background: none;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Roboto'
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    body {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Roboto'
+    }
+
+    .home-menu {
+        text-align: left;
+    }
+
+    .home-menu ul {
+        float: right;
+    }
+}
