@@ -1,5 +1,7 @@
 .algolia-autocomplete {
     width: 40%;
+    position: relative;
+    float: left;
   }
   .algolia-autocomplete .aa-input,
   .algolia-autocomplete .aa-hint {
@@ -25,4 +27,13 @@
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
     font-weight: bold;
     font-style: normal;
+    font-family: 'Roboto';
   }
+
+@media (max-width: 768px) {
+  .algolia-autocomplete {
+    width: 65%;
+    position: relative;
+    float: left;
+  }
+}
