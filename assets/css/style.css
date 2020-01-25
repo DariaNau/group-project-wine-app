@@ -8,9 +8,10 @@
 /* Menu Bar Styles */
 .home-menu {
     padding: 0.5em;
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
     background: olive;
 }
+
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
     border-bottom: none;
@@ -26,7 +27,7 @@
     font-family: 'Playfair Display';
 }
 
-.home-menu .pure-menu-link{
+.home-menu .pure-menu-link {
     color: white;
     text-align: right;
 }
@@ -34,6 +35,7 @@
 .home-menu a {
     color: #6FBEF3;
 }
+
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
@@ -65,7 +67,8 @@
     height: 20px;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     background: url('../images/background.jpg');
@@ -82,8 +85,8 @@ html, body {
     width: fit-content;
     display: block;
     margin: 50px 0; */
-    /* border: 2px solid maroon; */
-    /* background-color: maroon;
+/* border: 2px solid maroon; */
+/* background-color: maroon;
     text-transform: capitalize;
     color: white;
 } */
@@ -127,10 +130,12 @@ html, body {
     padding: 1em 0;
     text-align: center;
 }
+
 .footer a {
     color: black;
     font-size: 80%;
 }
+
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
     background: none;
@@ -172,26 +177,27 @@ html, body {
     body {
         font-size: 16px;
     }
-    
+
     /* We can align the menu header to the left, but float the
     menu items to the right. */
     .home-menu {
         text-align: left;
     }
-        .home-menu ul {
-            float: right;
-        }    
+
+    .home-menu ul {
+        float: right;
+    }
 }
 
-  /* API response styling */
+/* API response styling */
 
-.ajax-response-one{
+.ajax-response-one {
     line-height: 1.5;
     margin: 2% auto;
     color: black;
     background: rgba(216, 230, 216, 0.4);
     border-radius: 25px;
-    padding: 1%; 
+    padding: 1%;
     width: fit-content;
     padding: 3%;
     border: rgba(212, 203, 203, 0.4);
@@ -199,24 +205,24 @@ html, body {
     border-width: 5px;
 }
 
-.grapename{
+.grapename {
     text-transform: uppercase;
     font-weight: bolder;
     font-size: larger;
 }
 
 
-.image-text-div{
+.image-text-div {
     display: flex;
 }
 
-#wineDiv{
+#wineDiv {
     font-size: larger;
     flex-basis: 1;
     margin: 2%;
 }
 
-a.pure-button.searches{
+a.pure-button.searches {
     width: 100%;
     padding: 2%;
     display: block;
@@ -229,48 +235,46 @@ a.pure-button.searches{
     font-size: 130%;
     border-radius: 25px;
     text-align: center !important;
-  }
+}
 
-  #searchBtn{
+#searchBtn {
     color: whitesmoke;
     background-color: maroon;
     opacity: 85%;
     border-radius: 10px;
     text-transform: capitalize;
-  }
+}
 
-  /* recipe.html styling here */
+/* recipe.html styling here */
 
-  .pure-button{
+.pure-button {
     color: whitesmoke;
     background-color: maroon;
     opacity: 85%;
     border-radius: 10px;
     text-transform: capitalize;
     margin: 1%;
-  }
+}
 
-  #recipe-card{
+#recipe-card {
     line-height: 1.5;
     margin: 3% auto;
     color: black;
     background: rgba(216, 230, 216, 0.4);
     border-radius: 25px;
-    padding: 1%; 
+    padding: 1%;
     width: fit-content;
     max-width: 80%;
     padding: 3%;
     border: rgba(212, 203, 203, 0.4);
     border-style: solid;
     border-width: 5px;
-  }
+}
 
-  /* .wine-res{
+/* .wine-res{
     color: black;
     background: rgba(216, 230, 216, 0.4);
     border-style: solid maroon 1px;
     padding: 1%; 
     width: fit-content;
   } */
-
-

@@ -1,36 +1,10 @@
 // LOADER ACTIVATED
+
 $(".ajax-response-one").hide();
 
-$(window).on("load",function(){
+$(window).on("load", function () {
   $(".loader-wrapper").fadeOut("slow");
 });
-
-//1
-
-// $(window).on("reload",function(){
-//   localStorage.removeItem("response1");
-//   localStorage.removeItem("response2");
-// });
-
-//2
-
-// window.onbeforeunload = function() {
-//   localStorage.removeItem("response2");
-//   localStorage.removeItem("response1");
-// }
-
-//3 
-
-// window.onbeforeunload = function (e) {
-//   window.onunload = function () {
-//           window.sessionStorage.isMySessionActive = "false";
-//   }
-//   return undefined;
-// };
-
-// window.onload = function () {
-//           window.sessionStorage.isMySessionActive = "true";
-// };
 
 // GLOBAL VARS
 
@@ -42,7 +16,7 @@ var wineKEY = "50e942eafbb0432890384d40751871de";
 
 // if enter is pressed by user trigger the on(click) function
 
-$("#userInput").keyup(function(event) {
+$("#userInput").keyup(function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     $("#searchBtn").click();
@@ -51,7 +25,7 @@ $("#userInput").keyup(function(event) {
 
 // ClICK ON SEARCH TO START
 
-$("#searchBtn").click(function() {
+$("#searchBtn").click(function () {
   // var term = $("#userInput").val().trim()
   // if(!suggestedSearch.includes(term)){
   //   suggestedSearch.push(term)
@@ -76,7 +50,7 @@ function wineDataLoad() {
     url: wineURL,
     method: "GET"
   })
-    .then(function(wineRes) {
+    .then(function (wineRes) {
       // APPEND RESPONSE ONE (WINE DESCRIPTION) AND SET TO LOCAL STORAGE
       var response1 = wineRes.text;
       console.log(response1)
@@ -89,7 +63,7 @@ function wineDataLoad() {
       var response1Local = JSON.parse(sessionStorage.getItem("response1"));
       var p = $("<p></p>").text(response1Local + " Please select a style of food you're in the mood for to see the recipe!").addClass("wine-res");
       wineINFO.append(p);
-      
+
       var response2 = wineRes.pairings;
       sessionStorage.setItem("response2", JSON.stringify(response2));
       foodINFO.empty();
@@ -101,9 +75,9 @@ function wineDataLoad() {
           .text(response2Local[i])
           .addClass("pure-button searches")
           .attr("data-name", response2Local[i]);
-          var dish = (response2Local[i]);
-          foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
-          foodINFO.append(foodOPT);
+        var dish = (response2Local[i]);
+        foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
+        foodINFO.append(foodOPT);
       }
 
       // clear input area
@@ -113,7 +87,7 @@ function wineDataLoad() {
       // handling bad requests
 
     })
-    .catch(function(err) {
+    .catch(function (err) {
       Swal.fire({
         title: "Oops!",
         text: "Please enter a valid name of a grape varietal.",
@@ -129,7 +103,7 @@ function renderSearchInfo() {
   var response1Local = JSON.parse(sessionStorage.getItem("response1")) || [];
   console.log(response1Local)
   var p = $("<div></div>").text(response1Local).addClass("wine-res");
-    wineINFO.append(p);
+  wineINFO.append(p);
 }
 
 function renderButtons() {
@@ -140,7 +114,7 @@ function renderButtons() {
       .text(response2Local[i])
       .addClass("pure-button searches")
       .attr("data-name", response2Local[i]);
-      var dish = (response2Local[i]);
+    var dish = (response2Local[i]);
     foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
     foodINFO.append(foodOPT);
   }
