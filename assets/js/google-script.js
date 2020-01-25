@@ -24,7 +24,7 @@
 
 
 
-
+///////retrieve function for wine pic
 $("#searchBtn").click(function () {
   winePic();
 
