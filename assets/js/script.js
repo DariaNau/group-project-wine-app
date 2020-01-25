@@ -1,4 +1,5 @@
 // LOADER ACTIVATED
+$(".ajax-response-one").hide();
 
 $(window).on("load",function(){
   $(".loader-wrapper").fadeOut("slow");
@@ -56,6 +57,7 @@ $("#searchBtn").click(function() {
   //   suggestedSearch.push(term)
   // }
   wineDataLoad();
+  $(".ajax-response-one").show();
 });
 
 function wineDataLoad() {
