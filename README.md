@@ -6,7 +6,7 @@ A casual app for pairing food recipes with a user’s choice bottle. As you type
 
 ## Installation
 
-Please visit the deployed project at: https://darianau.github.io/project-1/ 
+Please visit the deployed project at: https://darianau.github.io/group-project-wine-app/.
 
 ## Technologies
 
