@@ -61,7 +61,7 @@ function wineDataLoad() {
       wineINFO.prepend(grapeName);
 
       var response1Local = JSON.parse(sessionStorage.getItem("response1"));
-      var p = $("<p></p>").text(response1Local + " Please select a style of wine you're in the mood for to see the recipe!").addClass("wine-res");
+      var p = $("<p></p>").text(response1Local + " Please select a style of food you're in the mood for to see the recipe!").addClass("wine-res");
       wineINFO.append(p);
 
       var response2 = wineRes.pairings;
@@ -74,7 +74,7 @@ function wineDataLoad() {
         foodOPT = $("<a><button></button></a>")
           .text(response2Local[i])
           .addClass("pure-button searches")
-          .attr("data-name", response2Local[i]);
+          .attr("data-name", response2Local[i]).attr("target","_blank");
         var dish = (response2Local[i]);
         foodOPT.attr("href", "recipe.html" + "?dish-name=" + dish);
         foodINFO.append(foodOPT);
