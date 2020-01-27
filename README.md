@@ -1,12 +1,14 @@
-# Wine & Dine - A Simple Food Pairing App
+# Wine & Dine Web App
 
 ## Introduction
 
-A casual app for pairing food recipes with a user’s choice bottle. As you type in a name of a wine, you will get a small description and picture of the chosen wine. A list of recipes will appear as buttons on the page. When a button is chosen, a page will display showing the recipe.
+Wine & Dine is a simple app for pairing food recipes with a user’s choice of wine. Experience flavors. No frills added.
 
 ## Installation
 
-Please visit the deployed project at: https://darianau.github.io/project-1/ 
+Please visit the deployed project at: https://darianau.github.io/project-1/.  
+
+As a user types in the name of a grape varietal, a short description and picture of the chosen wine will be displayed. A list of matched food options will appear as buttons on the page. When a button is clicked, a new page will show preparation details for the perfectly paired recipe. 
 
 ## Technologies
 
@@ -78,10 +80,6 @@ This section only applies to image users and not to the appropriate image author
 ✕	Don't sell unaltered copies of an image. e.g. sell an exact copy of a stock photo as a poster, print or on a physical product.
 ✕	Don't portray identifiable people in a bad light or in a way that is offensive.
 ✕	Don't use images with identifiable brands to create a misleading association with a product or service.
-Learn more
-Model and Property Release
-
-
 
 
 
