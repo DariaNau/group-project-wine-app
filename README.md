@@ -1,8 +1,10 @@
 # Wine & Dine Web App
 
+Experience flavors. No frills added.
+
 ## Introduction
 
-Wine & Dine is a simple app that offers suggestions on food and wine pairings based on user’s choice of grape varietal. It recommends food pairings based on Spoonacular APIs large and diverse food database and includes information about ingredients, allergies and cooking instructions of the chosen recipe. Experience flavors. No frills added.
+Wine & Dine is a simple app that offers suggestions on food and wine pairings based on user’s choice of grape varietal. It recommends food pairings based on Spoonacular APIs large and diverse food database and includes information about ingredients, allergies and cooking instructions of the chosen recipe. 
 
 ## Installation  
 
@@ -80,7 +82,3 @@ This section only applies to image users and not to the appropriate image author
 ✕	Don't sell unaltered copies of an image. e.g. sell an exact copy of a stock photo as a poster, print or on a physical product.
 ✕	Don't portray identifiable people in a bad light or in a way that is offensive.
 ✕	Don't use images with identifiable brands to create a misleading association with a product or service.
-
-
-
-
